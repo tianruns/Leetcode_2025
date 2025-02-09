@@ -13,7 +13,7 @@ public:
         do
         {
             // Calculate middle index
-            middle = (left + right) / 2;
+            middle = left + (right - left)/2;
 
             // Check if the middle element is the target
             if(nums[middle] == target)
