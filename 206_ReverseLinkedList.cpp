@@ -25,10 +25,7 @@ public:
             return curr;
         ListNode* temp = curr ->next;
         curr -> next = pre;
-        if(temp)
-            return reverse(curr, temp);
-        else
-            return curr;
+        return reverse(curr, temp);
     }
     ListNode* reverseList(ListNode* head) {
         // ListNode* curr = head;
