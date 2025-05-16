@@ -16,7 +16,7 @@ public:
             return -1;
         LinkNode* curr = _dummyNode -> next;
         /* Continue moving curr, until reach target*/
-        while((index--) > 0)
+        while(index--)
             curr = curr -> next;
         return curr -> val;
     }
@@ -47,7 +47,7 @@ public:
             return ;
         LinkNode* newNode = new LinkNode(val);
         LinkNode* curr = _dummyNode;
-        while(index-- > 0)
+        while(index--)
             curr = curr -> next;
         newNode -> next = curr -> next;
         curr -> next = newNode;
@@ -60,11 +60,14 @@ public:
         if(index  + 1 > _size)
             return ;
         LinkNode* curr = _dummyNode;
-        while((index--) > 0)
+        while(index--> 0)
             curr = curr -> next;
         LinkNode* target = curr -> next;
         curr -> next = target -> next;
         delete target;
+        /* target's memory is cleared, which does not mean target points to nullptr
+           terget now points to unknown variable, which is a risk*/
+        target = nullptr;
         _size--;
     }
 };
