@@ -6,14 +6,12 @@ public:
         int length = nums.size() + 1;
         for(int right = 0; right < nums.size(); right++){
             sum += nums[right];
-            while(sum - nums[left] >= target){
+            while(sum >= target){
                 sum -= nums[left];
-                left++;
                 length = min(length, right - left + 1);
-            }
-            if(sum >= target)
-                
+                left++;
+            }                
         }
-        return length == (nums.size()+1)? 0:length;
+        return length <= nums.size()? length:0;
     }
 };
