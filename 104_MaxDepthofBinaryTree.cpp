@@ -32,3 +32,16 @@ public:
         return level;
     }
 };
+
+class Solution {
+public:
+    int height(TreeNode* root){
+        if(!root)
+            return 0;
+        // left tree and right tree height
+        return  max(height(root->left), height(root->right)) + 1;
+    }
+    int maxDepth(TreeNode* root) {
+       return height(root);
+    }
+};
